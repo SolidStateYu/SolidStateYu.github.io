@@ -1,12 +1,16 @@
-doctype html
-html(lang='en-us')
-  head
-    include _head
-    include _mixins
-  body(itemscope, itemtype='https://schema.org/WebPage')
-    header(itemscope, itemtype='https://schema.org/WPHeader')
-      include _header
-      .space
-    main(itemscope, itemtype='https://schema.org/Blog')
-      include _content
-    include _scripts
+extends partial/layout
+
+block site_title
+    !=  "归档 · " + config.title
+
+block description
+    - var desc = '归档页面 - ' + config.title;
+    meta(name="description", content=desc)
+
+block content
+    .autopagerize_page_element: .content
+      .archive.animated.fadeInDown
+        ul.list-with-title
+          include mixins
+          +postList()
+          +make_pager(__('prev'), __('next'))
