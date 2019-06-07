@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Ernest"><title>2019 Github+Hexo搭建博客 · Celes & Ernest</title><meta name="description" content="最近起了搭建一个博客的想法，一来想在网络上有我们的一个小地方，可以放一些我们的输出，二来也许借这个地方认识一些朋友也说不定（期待）。查了些资料，还是比较中意Github平台的搭建方式，本来就有Github的账号，对博客呈现的完全控制更是非常吸引我。上手折腾了几天，可算完成搭建，因为实属这方面的小白，"><meta name="keywords" content="虚度光阴3"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">Celes &amp; Ernest</a></h3><div class="description"><p>虚度光阴</p></div></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>2019 Github+Hexo搭建博客</a></h3></div><div class="post-content"><p>最近起了搭建一个博客的想法，一来想在网络上有我们的一个小地方，可以放一些我们的输出，二来也许借这个地方认识一些朋友也说不定（期待）。查了些资料，还是比较中意Github平台的搭建方式，本来就有Github的账号，对博客呈现的完全控制更是非常吸引我。上手折腾了几天，可算完成搭建，因为实属这方面的小白，中间走了有些弯路，觉得有必要记录下来，供有同样想法的朋友参考，如下：</p>
+<h1 id="一、前期准备："><a href="#一、前期准备：" class="headerlink" title="一、前期准备："></a>一、前期准备：</h1><p>参考我的情况，需要有以下前期准备：</p>
+<ol>
+<li>需要有关于Git的一般知识 &amp; Github账号；</li>
+<li>需要联网操作；</li>
+<li>需要安装Git / TortoiseGit；</li>
+</ol>
+<h1 id="二、环境安装："><a href="#二、环境安装：" class="headerlink" title="二、环境安装："></a>二、环境安装：</h1><p>总体思路是：</p>
+<ol>
+<li>使用Github的博客服务Github Pages创建一个特殊的Repository，它的作用在于将此Repository中的信息生成一个网页并展示出来，也就是我们的博客页面，理解成是一个博客展示器？（但内容我们说了算）；</li>
+<li>安装Hexo博客框架 / 工具，可以在本地生成博客，当然，生成的博客内容我们需要发布到前面Github Pages的那个Repository里，让大家可以看到；</li>
+<li>用Hexo创建本地博客；</li>
+<li>把本地博客部署到Pages；</li>
+</ol>
+<p>That’s it，因为工具给力，所以还蛮简单，开整！</p>
+<h2 id="2-1-创建Github-Pages仓库-Repository"><a href="#2-1-创建Github-Pages仓库-Repository" class="headerlink" title="2.1 创建Github Pages仓库(Repository)"></a>2.1 创建Github Pages仓库(Repository)</h2><p>用自己的账号登陆Github，在Repository界面中创建一个以github.io结尾的Repository即可，如solidstateyu.github.io，Github会识别到这个特殊的标记，将这个Repository视为Pages来处理，如下图：</p>
+<p><img src="/images/2019GithubHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E5%88%9B%E5%BB%BAPages.png" alt="创建Pages"></p>
+<p>记得勾选“Initialize this repository with a README”。</p>
+<p>创建完成后，打开网页：<a href="http://solidstateyu.github.io">http://solidstateyu.github.io</a> 就可以看到ReadMe里面的内容了。</p>
+<p>所以说Github Pages就是个博客展示器，因为新创建的Repository空荡荡的只有个ReadMe，所以Pages也就只能呈现这么多内容了。</p>
+<p>下面就请出Hexo，帮我们构建可以呈现更丰富内容的博客。</p>
+<h2 id="2-2-安装Hexo"><a href="#2-2-安装Hexo" class="headerlink" title="2.2 安装Hexo"></a>2.2 安装Hexo</h2><p>安装Hexo之前，需要先安装Node.js，前往：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> 下载新版安装包安装即可。</p>
+<p>Windows系统下Win + R，输入CMD，呼出Command Prompt，输入node -v得到正常版本号即表示安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hode -v</span><br></pre></td></tr></table></figure>
+
+<p>现在可以安装Hexo了。还是呼出Command Prompt，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>回车开始安装。安装完成后，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>得到Hexo的版本号，确认安装是否成功。</p>
+<h2 id="2-3-创建本地博客"><a href="#2-3-创建本地博客" class="headerlink" title="2.3 创建本地博客"></a>2.3 创建本地博客</h2><p>在电脑上找个路径，创建一个文件夹，如D:\MyBlog。右键该文件夹，选择Git Bash Here，呼出Git终端。</p>
+<p>输入hexo init将这个文件夹初始化成一个博客文件夹；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>输入npm install安装依赖包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo install</span><br></pre></td></tr></table></figure>
+
+<p>输入hexo g生成本地博客（Hexo自己带了一个Hello World博客）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>输入hexo s将本地博客放到本地服务器上，供我们浏览，打开浏览器，输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 就可以看到了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>回到Git终端，按下Ctrl+C就可以停止这个服务器，结束本地浏览了。</p>
+<p>至此，我们有了一个本地的博客。先什么都不改，把它部署到网络上去吧~</p>
+<h2 id="2-4-部署博客"><a href="#2-4-部署博客" class="headerlink" title="2.4 部署博客"></a>2.4 部署博客</h2><p>登陆Github，进入我们创建的Repository，如：<a href="http://solidstateyu.github.io，" target="_blank" rel="noopener">http://solidstateyu.github.io，</a> 点击Clone / Download，得到它的URL；</p>
+<p>进入D:/MyBlog文件夹（也就是我们的本地博客，里面应该有很多内容了），找到_config.yml文件，用记事本 / Notepad++打开，找到#Deployment字段，填入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">type: git </span><br><span class="line">repository: https://github.com/solidstateyu/solidstateyu.github.io.git </span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p>里面的这个URL就是我们刚刚通过点击Clone / Download得到的URL，它的意思是告诉Hexo，把本地的博客内容，部署到这个Repository中。</p>
+<p>保存文件，打开Git终端（在D:/MyBlog文件夹上右键Git Bash Here），输入下面的指令，来安装hexo deployer（hexo部署器）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>完成安装后，输入hexo d把本地博客部署到Github的Repository中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>看到“INFO Deploy done: git”？ 可以哇哈哈哈~</p>
+<p>经过这些步骤，就可以通过网址访问到我们的博客了，像这样的:  <a href="https://solidstateyu.github.io，" target="_blank" rel="noopener">https://solidstateyu.github.io，</a> 并且会呈现Hexo默认的Hello World博客页面。</p>
+<h1 id="三、更改主题："><a href="#三、更改主题：" class="headerlink" title="三、更改主题："></a>三、更改主题：</h1><p>当然我们不会满足默认的Hello World博客！</p>
+<p>Hexo提供了很多博客风格供我们选用，可以到这个网址里找到你喜欢的：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p>我们的选择是：Anatole，真的简洁的不能再简洁！喜欢！</p>
+<p>开始替换：<br>打开Git终端（在D:/MyBlog文件夹上右键Git Bash Here），输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Ben02/hexo-theme-Anatole themes/Anatole</span><br></pre></td></tr></table></figure>
+
+<p>意思是把Anatole主题的所有代码文件Clone到themes目录下的Anatole文件夹（Hexo知道themes文件夹存放的是博客的主题文件）。</p>
+<p>用记事本 / Notepad++打开_config.yml文件，找到theme字段，将默认的landscape修改成Anatole，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme：Anatole</span><br></pre></td></tr></table></figure>
+
+<p>顺带把其他可以自定义的内容也改掉？ 没问题，有：#site、language、URL之类的。</p>
+<p>该改的都改完了，在终端里输入hexo g -d一次性搞定生成和部署：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>理论上，在浏览器中输入  <a href="https://solidstateyu.github.io，" target="_blank" rel="noopener">https://solidstateyu.github.io，</a> 就可以看到Anatole主题的博客啦~~</p>
+<p>事情也许不会这么顺利，我在操作过程中出现如下错误：</p>
+<p>“npm WARN <a href="mailto:babel-eslint@10.0.1" target="_blank" rel="noopener">babel-eslint@10.0.1</a> requires a peer of eslint@&gt;= 4.12.1 but none is installed. You must install peer dependencies yourself. “</p>
+<p>是安装没有完全成功，上网找到如下解决方法搞定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint@^4.12.0</span><br></pre></td></tr></table></figure>
+
+<p>你也许会遇到其他错误，但基本上根据提示，手动再操作一下就可以了。</p>
+<h1 id="四、发布博文"><a href="#四、发布博文" class="headerlink" title="四、发布博文"></a>四、发布博文</h1><p>OK，博客搭建好了，是时候写下第一篇博文。</p>
+<p>发布博文的一般流程是：</p>
+<ol>
+<li>用Hexo新建一个空白博文；</li>
+<li>用Markdown编辑器编辑这个博文；</li>
+<li>用Hexo生成且部署博文到Github的Repository；</li>
+</ol>
+<p>三步走完，博文就可以在博客里看到了。分解动作来一遍：</p>
+<p>打开Git终端，输入hexo new “第一篇博文”，就可以在D:/MyBlog/source/posts/目录下看到一个md格式的空白博文文件了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;第一篇博文&quot;</span><br></pre></td></tr></table></figure>
+
+<p>用各种编辑器（比如我正在用的typora），编辑这份文件，完事记得保存；</p>
+<p>回到Git终端，输入hexo d -g，完成生成和部署。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p>当然，也可以先本地预览一下，看看效果，然后再部署，那就：</p>
+<ol>
+<li>hexo g，生成博文</li>
+<li>hexo s，本地浏览一下(在本地浏览器中输入localhost:4000即可看到)</li>
+<li>hexo d，部署到Git Repository</li>
+</ol>
+<h1 id="五、问题和参考链接："><a href="#五、问题和参考链接：" class="headerlink" title="五、问题和参考链接："></a>五、问题和参考链接：</h1><p>博文中插入图片的问题：</p>
+<p>来来回回试了好几个方法，都不行，在Hexo的官网上找到解决办法：<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/asset-folders.html</a>。</p>
+<p>”如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中。然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。“</p>
+<p>就这么简单！所以说，凡事先问官网！</p>
+<p>搭建过程中参考的一些博文和网站，链接如下：</p>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p><a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/asset-folders.html</a></p>
+<p><a href="https://www.cnblogs.com/enjoy233/p/10468996.html" target="_blank" rel="noopener">https://www.cnblogs.com/enjoy233/p/10468996.html</a></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-06-07</span><i class="fa fa-tag"></i><a class="tag" href="/tags/TECH/" title="TECH">TECH </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,https://solidstateyu.github.io/2019/06/07/2019-Github-Hexo搭建博客/,Celes &amp; Ernest,2019 Github+Hexo搭建博客,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/06/07/临摹-大鲨鱼/" title="临摹-大鲨鱼">上一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
