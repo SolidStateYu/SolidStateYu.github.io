@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Ernest"><title>深度学习笔记散记 · Celes & Ernest</title><meta name="description" content="Tips：
+混淆矩阵 / ROC / Recall
+
+卷积 / Pooling / Padding / Stride
+
+反向传播：损失函数、优化算法
+
+需要梳理清楚网络的整体框架 + 核心概念
+
+实践的方法论：关于Train、Over fitting、Under fitting（早停、Dropout"><meta name="keywords" content="虚度光阴3"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title><a href="/">Celes &amp; Ernest</a></h3><div class="description"><p>虚度光阴</p></div></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>深度学习笔记散记</a></h3></div><div class="post-content"><h2 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a>Tips：</h2><ol>
+<li><p>混淆矩阵 / ROC / Recall</p>
+</li>
+<li><p>卷积 / Pooling / Padding / Stride</p>
+</li>
+<li><p>反向传播：损失函数、优化算法</p>
+</li>
+<li><p>需要梳理清楚网络的整体框架 + 核心概念</p>
+</li>
+<li><p>实践的方法论：关于Train、Over fitting、Under fitting（早停、Dropout之类）</p>
+</li>
+<li><p>框架：Caffe / CNTK / Detectron</p>
+</li>
+<li><p>内存计算：model部分 + blob部分，区分训练时 和 测试时；</p>
+</li>
+<li><p>降低过拟合的方法：降低网络复杂度、Dropout（后层无法一直依赖前层的某一个节点）、数据增强、正则化</p>
+</li>
+<li><p>可视化可以辅助检查网络的学习情况</p>
+</li>
+<li><p>通过更深的卷积网络使特征图中单个元素的感受野变得更加广阔，从而捕捉输入上更大尺寸的特征；</p>
+</li>
+<li><p>池化层：为了缓解卷积层对位置的过度敏感性；Crop也可以；</p>
+</li>
+<li><p>VGG、NiN、Inception、批量归一化、ResBlock、DenseBlock；</p>
+</li>
+<li><p>泰勒展开推导梯度下降：批量梯度下降、随机梯度下降、小批量随机梯度下降；</p>
+</li>
+<li><p>动量法是为了解决梯度下降发散的问题；采用了指数加权移动平均的思想，将过去步的梯度做了加权平均，且权重按时间步指数衰减；</p>
+</li>
+<li><p>Fine Tunning：虽然ImageNet数据集的图像大都是和椅子无关，但在该数据集上训练的模型可以抽取较通用的图像特征，从而能够帮助识别边缘、纹理、形状和物体组成等；数据很少时，Fine Tunning有助于提升泛化能力；Fine Tunning用小学习率；</p>
+</li>
+</ol>
+<h2 id="工业实践："><a href="#工业实践：" class="headerlink" title="工业实践："></a>工业实践：</h2><p>Dense block、U_Net、空洞卷积、FPN-&gt;小目标、可视化Debug、迁移学习、数据驱动、大图分块、传统注意力机制、几K张图样本、各种训练+转换工具=&gt;Caffe部署；</p>
+<h2 id="白皮书："><a href="#白皮书：" class="headerlink" title="白皮书："></a>白皮书：</h2><ol>
+<li><p>算法库：Model Zoo</p>
+</li>
+<li><p>可视化工具：Tensorboard / Visual DL</p>
+</li>
+<li><p>网络表示：ONNX / NNEF</p>
+</li>
+<li><p>推断框架选型指标体系；</p>
+</li>
+<li><p>训练框架选型指标体系；</p>
+</li>
+<li><p>深度学习技术应用架构图；</p>
+</li>
+</ol>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-06-24</span><i class="fa fa-tag"></i><a class="tag" href="/tags/Deep-Learning/" title="Deep Learning">Deep Learning </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,https://solidstateyu.github.io/2019/06/24/深度学习笔记散记/,Celes &amp; Ernest,深度学习笔记散记,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/06/23/每周一书-《数学之美》/" title="每周一书-《数学之美》">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
