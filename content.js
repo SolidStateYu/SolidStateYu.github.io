@@ -62,6 +62,40 @@ const SITE_DATA = {
       duration: 3924, views: 141, date: "2026-04-02",
     },
 
+    // ===== 生活VLOG（B站合集「四季」） =====
+    {
+      section: "vlog", type: "video",
+      bvid: "BV1vbpc6QENh",
+      title: "秋季.山峦/索道.YORI.Lofi",
+      desc: "秋季：山峦与索道，配上 YORI 的 Lofi。",
+      pic: "https://i1.hdslb.com/bfs/archive/063414db79c2935cc56eb2bc7ecdf1a46449ecef.jpg",
+      duration: 441, views: 14, date: "2026-10-06",
+    },
+    {
+      section: "vlog", type: "video",
+      bvid: "BV1vCus6pEUk",
+      title: "立秋.花花/果实.YURI.Lofi",
+      desc: "四季：从立夏到立秋。",
+      pic: "https://i0.hdslb.com/bfs/archive/34a17e3b3e3666dc6e1692eac999fda0857ec14e.jpg",
+      duration: 102, views: 15, date: "2026-08-07",
+    },
+    {
+      section: "vlog", type: "video",
+      bvid: "BV1oSRMBpEeq",
+      title: "立夏.灰色/绿色.YURI.Lofi",
+      desc: "灰色退去，绿色登场～",
+      pic: "https://i2.hdslb.com/bfs/archive/c878aa1bdd0f60a63ec6749c2c3d959831ea24c7.jpg",
+      duration: 70, views: 22, date: "2026-05-05",
+    },
+    {
+      section: "vlog", type: "video",
+      bvid: "BV125BMBbEZm",
+      title: "冬至·下雪·白噪音·鲁宾斯坦·夜曲",
+      desc: "黏黏乎乎的雨夹雪～",
+      pic: "https://i0.hdslb.com/bfs/archive/154816328368de30b09444784122af6eb44d6261.jpg",
+      duration: 186, views: 158, date: "2025-12-23",
+    },
+
     // ===== 其他栏目：待填充（content 就绪后在此追加，section 对应导航 id） =====
   ],
 };
