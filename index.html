@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
 <title>Ernest · 个人主页</title>
 <style>
   :root {
@@ -230,7 +231,8 @@
       return `<article class="card-base card">
         <h3>${esc(c.title)}</h3>
         <div class="video-cover" data-bvid="${c.bvid}">
-          <img src="${c.pic}@480w_270h_1c.webp" alt="视频封面" loading="lazy">
+          <img src="${c.pic}@480w_270h_1c.webp" alt="" loading="lazy" referrerpolicy="no-referrer"
+               onerror="this.onerror=null;this.src=this.src.split('@')[0];">
           <span class="bili">bilibili</span>
           <div class="play-line">
             <svg class="icon-svg" viewBox="0 0 24 24" style="color:#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
@@ -243,7 +245,7 @@
       </article>`;
     }
     if (c.type === 'article') {
-      const cover = c.pic ? `<a class="article-cover" href="${c.url}" target="_blank" rel="noopener"><img src="${c.pic}" alt="" loading="lazy"></a>` : '';
+      const cover = c.pic ? `<a class="article-cover" href="${c.url}" target="_blank" rel="noopener"><img src="${c.pic}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>` : '';
       return `<article class="card-base card">
         <h3><a class="article-link" href="${c.url}" target="_blank" rel="noopener">${esc(c.title)}</a></h3>
         ${cover}
