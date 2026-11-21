@@ -12,14 +12,13 @@ const SITE_DATA = {
         { id: "part4", name: "Part4: 交付作业流程" },
         { id: "part5", name: "Part5: 智能照明" },
         { id: "part6", name: "Part6: 质检套件" },
-        { id: "cases", name: "实战案例" }
+        { id: "cases", name: "Part7: 实战案例" }
       ],
     },
     { id: "ai-productivity", name: "AI&生产力" },
     { id: "vlog", name: "生活VLOG" },
     { id: "reading", name: "读书笔记" },
     { id: "tech-blog", name: "科技博文" },
-    { id: "about", name: "关于..." },
   ],
 
   cards: [
