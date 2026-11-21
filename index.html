@@ -26,10 +26,7 @@
 
   /* ----- 背景光斑：低饱和暗色，让毛玻璃的模糊有内容可折射 ----- */
   .backdrop { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
-  .backdrop i {
-    position: absolute; border-radius: 50%; filter: blur(110px);
-    opacity: .16;
-  }
+  .backdrop i { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .16; }
   .backdrop i.g1 { width: 44vw; height: 44vw; background: #3d5db3; top: -14%; left: -6%; }
   .backdrop i.g2 { width: 36vw; height: 36vw; background: #5e4a9e; bottom: -12%; right: -4%; }
   .backdrop i.g3 { width: 26vw; height: 26vw; background: #2e6e66; top: 34%; left: 38%; opacity: .10; }
@@ -41,7 +38,7 @@
     padding: 32px 24px;
   }
 
-  /* ----- 毛玻璃卡片：半透明面板 + 背景模糊 ----- */
+  /* ----- 毛玻璃卡片 ----- */
   .card-base {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -113,18 +110,15 @@
   .card .meta { margin-top: 12px; font-size: 12px; color: var(--text-dim); display: flex; gap: 12px; flex-wrap: wrap; }
   .card .meta .pill { color: #767c87; }
 
-  /* 视频卡片：深灰封面占位 */
+  /* 视频卡片 */
   .video-cover {
     margin: 8px -20px 14px; aspect-ratio: 16 / 9;
-    background: rgba(16, 18, 23, .6); border-bottom: 1px solid var(--border);
+    background: rgba(16, 18, 23, .6); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center;
     position: relative; cursor: pointer; color: #5a5f6a; font-size: 13px;
     overflow: hidden;
   }
-  .video-cover img {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover;
-  }
+  .video-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .video-cover .play-line {
     position: relative; z-index: 1;
     width: 44px; height: 44px; border-radius: 50%;
@@ -134,9 +128,7 @@
     transition: transform .2s, background .2s;
   }
   .video-cover:hover .play-line { transform: scale(1.08); background: rgba(10, 12, 16, .75); }
-  .video-cover iframe {
-    position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-  }
+  .video-cover iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .video-cover .badge {
     position: absolute; bottom: 8px; right: 10px; z-index: 1; font-size: 11px;
     background: rgba(0,0,0,.65); color: #c9cdd4; padding: 2px 7px; border-radius: 4px;
@@ -147,19 +139,11 @@
     padding: 2px 8px; border-radius: 4px;
   }
 
-  /* GitHub 热力图（暗色低饱和） */
-  .heatmap { display: grid; grid-template-rows: repeat(7, 9px); grid-auto-flow: column; grid-auto-columns: 9px; gap: 3px; margin-top: 12px; }
-  .hm-cell { width: 9px; height: 9px; border-radius: 2px; background: rgba(255,255,255,.06); }
-  .hm-cell.l1 { background: #2c3b52; }
-  .hm-cell.l2 { background: #37507a; }
-  .hm-cell.l3 { background: #4a6ba0; }
-  .hm-cell.l4 { background: #7aa2e8; }
-
-  /* 读书进度条 */
-  .progress { height: 4px; background: rgba(255,255,255,.07); border-radius: 4px; margin-top: 12px; overflow: hidden; }
-  .progress i { display: block; height: 100%; background: #5a616e; }
-
-  .quote-card blockquote { font-size: 14px; line-height: 1.9; color: #c3c8d1; border-left: 3px solid var(--border); padding-left: 12px; }
+  /* 空栏目占位 */
+  .empty-hint {
+    padding: 48px 20px; text-align: center;
+    color: var(--text-dim); font-size: 14px;
+  }
 
   .foot { text-align: center; padding: 28px 0 8px; font-size: 12px; color: var(--text-dim); }
 
@@ -178,35 +162,9 @@
 
 <div class="layout">
 
-  <!-- ============ 左侧边栏 ============ -->
+  <!-- ============ 左侧边栏（由 content.js 渲染） ============ -->
   <aside class="sidebar">
-    <nav class="card-base menu">
-      <div class="menu-group active">
-        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="12" cy="12" r="3.2"/></svg>
-        AI工业视觉检测
-      </div>
-      <div class="menu-sub">
-        <div class="menu-item active">Part1: 概述</div>
-        <div class="menu-item">Part2: 检测软件</div>
-        <div class="menu-item">Part3: AI软件</div>
-      </div>
-      <div class="menu-group">
-        <svg class="icon-svg" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
-        AI&amp;生产力
-      </div>
-      <div class="menu-group">
-        <svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3.5v9L15 13"/></svg>
-        生活VLOG
-      </div>
-      <div class="menu-group">
-        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18a2.5 2.5 0 0 0 2.5 2.5H20"/><path d="M9 8h7M9 11.5h5"/></svg>
-        读书笔记
-      </div>
-      <div class="menu-group">
-        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L16.5 3.5z"/></svg>
-        科技博文
-      </div>
-    </nav>
+    <nav class="card-base menu" id="menu"></nav>
 
     <div class="card-base sidebar-foot">
       <a href="https://github.com/SolidStateYu">
@@ -216,172 +174,130 @@
     </div>
   </aside>
 
-  <!-- ============ 右侧主区 ============ -->
+  <!-- ============ 右侧主区（由 content.js 渲染） ============ -->
   <main class="main">
-
-    <section class="masonry">
-
-      <!-- B站视频卡片（真实视频） -->
-      <article class="card-base card">
-        <h3>Harness 工程：Agent 优先世界的开发实践</h3>
-        <div class="video-cover" data-bvid="BV1Ebsb6VEad">
-          <img src="https://i2.hdslb.com/bfs/archive/b9d9f205d04a0c7ed39704a7966160d219811a65.jpg@480w_270h_1c.webp" alt="视频封面">
-          <span class="bili">bilibili</span>
-          <div class="play-line">
-            <svg class="icon-svg" viewBox="0 0 24 24" style="color:#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
-          </div>
-          <span class="badge">13:19</span>
-        </div>
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3.5v9L15 13"/></svg>
-          哔哩哔哩 · 视频
-        </div>
-        <p>三人团队从空仓库起步，五个月写出约 100 万行代码，人工手写 0 行——当 agent 能写所有代码时，工程师干什么？</p>
-        <div class="meta"><span class="pill">130 播放</span><span>UP: ErnestCCC</span></div>
-      </article>
-
-      <!-- GitHub 热力图 -->
-      <article class="card-base card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-          GitHub · 活动
-        </div>
-        <h3>今年提交了 642 次</h3>
-        <div class="heatmap" id="heatmap"></div>
-        <div class="meta"><span class="pill">42 repos</span><span class="pill">1.2k stars</span></div>
-      </article>
-
-      <!-- 读书笔记 -->
-      <article class="card-base card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18a2.5 2.5 0 0 0 2.5 2.5H20"/></svg>
-          读书笔记
-        </div>
-        <h3>《论持久战》对"长期项目"的三点启示</h3>
-        <p>战略上藐视难度，战术上重视细节；不打无准备之仗；积小胜为大胜——映射到毕业设计与开源项目管理同样成立。</p>
-        <div class="meta"><span>读至 68%</span></div>
-        <div class="progress"><i style="width:68%"></i></div>
-      </article>
-
-      <!-- 科技博文 -->
-      <article class="card-base card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L16.5 3.5z"/></svg>
-          科技博文
-        </div>
-        <h3>用 CSS columns 实现"真·瀑布流"，一行 JS 都不用</h3>
-        <p>对比 grid 方案与 columns 方案的取舍，以及 break-inside: avoid 的那些坑。</p>
-        <div class="meta"><span class="pill">CSS</span><span>8 min</span><span>上周</span></div>
-      </article>
-
-      <!-- 金句卡片 -->
-      <article class="card-base card quote-card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v7a4 4 0 0 1-4 4"/><path d="M20 11h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v7a4 4 0 0 1-4 4"/></svg>
-          摘录
-        </div>
-        <blockquote>"你打你的，我打我的。"—— 把主动权还给学生，课堂才真正开始。</blockquote>
-        <div class="meta"><span>《注意力战争》教学札记</span></div>
-      </article>
-
-      <!-- B站视频卡片 2 -->
-      <article class="card-base card">
-        <h3>动手做一个智能小车仪表盘</h3>
-        <div class="video-cover">
-          <span class="bili">bilibili</span>
-          封面占位
-          <span class="badge">08:05</span>
-        </div>
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3.5v9L15 13"/></svg>
-          哔哩哔哩 · 视频
-        </div>
-        <p>ESP32 + Web 界面，完整实现过程记录。</p>
-        <div class="meta"><span class="pill">9,812 播放</span><span>1 周前</span></div>
-      </article>
-
-      <!-- 项目卡片 -->
-      <article class="card-base card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M4 17l6-5-6-5"/><path d="M12 19h8"/></svg>
-          项目与代码
-        </div>
-        <h3>attention-radar · 课堂注意力观测工具</h3>
-        <p>基于摄像头姿态估计的课堂参与度统计实验，数据不出本地。</p>
-        <div class="meta"><span class="pill">Python</span><span class="pill">34 stars</span><span>进行中</span></div>
-        <div class="progress"><i style="width:42%"></i></div>
-      </article>
-
-      <!-- 科技博文 2 -->
-      <article class="card-base card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L16.5 3.5z"/></svg>
-          科技博文
-        </div>
-        <h3>在线仿真是弥合"书本→项目"鸿沟的关键抓手</h3>
-        <p>Falstad / Tinkercad / Wokwi 三平台横向评测，以及在课堂中的落地策略。</p>
-        <div class="meta"><span class="pill">教学</span><span>12 min</span><span>2 周前</span></div>
-      </article>
-
-      <!-- 读书笔记 2 -->
-      <article class="card-base card">
-        <div class="cat">
-          <svg class="icon-svg icon-sm" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18a2.5 2.5 0 0 0 2.5 2.5H20"/></svg>
-          读书笔记
-        </div>
-        <h3>《卡片笔记写作法》与数字花园的邂逅</h3>
-        <p>知识应该在链接中生长，而不是在文件夹里腐朽。本月开始把读书笔记迁到双向链接系统。</p>
-        <div class="meta"><span>读至 100%</span></div>
-        <div class="progress"><i style="width:100%"></i></div>
-      </article>
-
-    </section>
-
+    <section class="masonry" id="masonry"></section>
     <div class="foot">Powered by GitHub Pages</div>
   </main>
 </div>
 
+<script src="content.js"></script>
 <script>
-  // 生成 GitHub 风格贡献热力图
-  const hm = document.getElementById('heatmap');
-  const levels = ['l1', 'l2', 'l3', 'l4'];
-  for (let i = 0; i < 7 * 26; i++) {
-    const cell = document.createElement('div');
-    cell.className = 'hm-cell ' + (Math.random() < .3 ? levels[Math.floor(Math.random()*4)] : '');
-    hm.appendChild(cell);
+  // ----- 栏目图标（线条 SVG） -----
+  const SECTION_ICONS = {
+    "ai-vision": '<svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="12" cy="12" r="3.2"/></svg>',
+    "ai-productivity": '<svg class="icon-svg" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>',
+    "vlog": '<svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="10" rx="2"/><path d="M15 11l6-3.5v9L15 13"/></svg>',
+    "reading": '<svg class="icon-svg" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5V5.5z"/><path d="M4 18a2.5 2.5 0 0 0 2.5 2.5H20"/></svg>',
+    "tech-blog": '<svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4L16.5 3.5z"/></svg>',
+  };
+
+  // ----- 渲染导航 -----
+  const menu = document.getElementById('menu');
+  menu.innerHTML = SITE_DATA.sections.map(s => {
+    const subs = (s.subs || []).map(sub =>
+      `<div class="menu-item" data-section="${s.id}" data-sub="${sub.id}">${sub.name}</div>`
+    ).join('');
+    const subHtml = s.subs ? `<div class="menu-sub">${subs}</div>` : '';
+    return `<div class="menu-group" data-section="${s.id}">${SECTION_ICONS[s.id] || ''}${s.name}</div>${subHtml}`;
+  }).join('');
+
+  // ----- 渲染卡片 -----
+  function fmtDur(sec) {
+    const m = Math.floor(sec / 60), s = sec % 60;
+    return `${m}:${String(s).padStart(2, '0')}`;
+  }
+  const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,' ');
+
+  function renderCard(c) {
+    if (c.type === 'video') {
+      return `<article class="card-base card">
+        <h3>${esc(c.title)}</h3>
+        <div class="video-cover" data-bvid="${c.bvid}">
+          <img src="${c.pic}@480w_270h_1c.webp" alt="视频封面" loading="lazy">
+          <span class="bili">bilibili</span>
+          <div class="play-line">
+            <svg class="icon-svg" viewBox="0 0 24 24" style="color:#fff"><path d="M8 5.5v13l10-6.5-10-6.5z"/></svg>
+          </div>
+          <span class="badge">${fmtDur(c.duration)}</span>
+        </div>
+        <div class="cat">${SECTION_ICONS['vlog'].replace('icon-svg','icon-svg icon-sm')}哔哩哔哩 · 视频</div>
+        <p>${esc(c.desc || '')}</p>
+        <div class="meta"><span class="pill">${c.views} 播放</span><span>${c.date}</span></div>
+      </article>`;
+    }
+    return '';
   }
 
-  // 视频卡片：点击封面后原地加载 B 站播放器（懒加载，不拖慢首屏）
-  document.querySelectorAll('.video-cover[data-bvid]').forEach(cover => {
-    cover.addEventListener('click', () => {
-      const bvid = cover.dataset.bvid;
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&high_quality=1&danmaku=0&autoplay=1`;
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('scrolling', 'no');
-      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups');
-      cover.innerHTML = '';
-      cover.appendChild(iframe);
-      cover.style.cursor = 'default';
-    }, { once: true });
-  });
+  const masonry = document.getElementById('masonry');
 
-  // 导航点击切换高亮
+  // ----- 栏目过滤 -----
+  let currentSection = null, currentSub = null;
+  function filterCards() {
+    const cards = SITE_DATA.cards.filter(c =>
+      (!currentSection || c.section === currentSection) &&
+      (!currentSub || !c.sub || c.sub === currentSub));
+    masonry.innerHTML = cards.map(renderCard).join('')
+      || `<div class="card-base empty-hint" style="width:100%">「${esc(currentName())}」栏目内容整理中，敬请期待</div>`;
+    bindVideoCovers();
+  }
+  function currentName() {
+    const s = SITE_DATA.sections.find(s => s.id === currentSection);
+    if (s && s.subs && currentSub) {
+      const sub = s.subs.find(x => x.id === currentSub);
+      return sub ? sub.name : s.name;
+    }
+    return s ? s.name : '';
+  }
+
+  // ----- 视频点击加载 B 站播放器（懒加载） -----
+  function bindVideoCovers() {
+    document.querySelectorAll('.video-cover[data-bvid]').forEach(cover => {
+      cover.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://player.bilibili.com/player.html?bvid=${cover.dataset.bvid}&page=1&high_quality=1&danmaku=0&autoplay=1`;
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('scrolling', 'no');
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups');
+        cover.innerHTML = '';
+        cover.appendChild(iframe);
+        cover.style.cursor = 'default';
+      }, { once: true });
+    });
+  }
+
+  // ----- 导航交互 -----
   function activate(el, selector) {
     document.querySelectorAll(selector + '.active').forEach(n => n.classList.remove('active'));
     el.classList.add('active');
   }
   document.querySelectorAll('.menu-group').forEach(item => {
-    item.addEventListener('click', () => activate(item, '.menu-group'));
+    item.addEventListener('click', () => {
+      activate(item, '.menu-group');
+      document.querySelectorAll('.menu-item.active').forEach(n => n.classList.remove('active'));
+      currentSection = item.dataset.section;
+      currentSub = null;
+      filterCards();
+    });
   });
   document.querySelectorAll('.menu-item').forEach(item => {
     item.addEventListener('click', () => {
       activate(item, '.menu-item');
-      // 点击二级标题时，同步高亮所属一级分组
       const group = item.closest('.menu-sub')?.previousElementSibling;
       if (group) activate(group, '.menu-group');
+      currentSection = item.dataset.section;
+      currentSub = item.dataset.sub;
+      filterCards();
     });
   });
+
+  // 默认展示第一个有内容的栏目
+  const firstSection = SITE_DATA.sections.find(s =>
+    SITE_DATA.cards.some(c => c.section === s.id)) || SITE_DATA.sections[0];
+  const firstBtn = menu.querySelector(`.menu-group[data-section="${firstSection.id}"]`);
+  firstBtn.classList.add('active');
+  currentSection = firstSection.id;
+  filterCards();
 </script>
 </body>
 </html>
