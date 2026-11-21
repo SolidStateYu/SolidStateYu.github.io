@@ -385,7 +385,16 @@ for section_id, season_id in SEASONS.items():
         if not arr:
             continue
         used_subs.append({"id": sid, "name": name})
-        arr.sort(key=lambda a: a["title"])
+        def lesson_key(a):
+            t = a["title"]
+            m = re.search(r"L(\d+)-(\d+)", t)
+            if m:
+                return (int(m.group(1)), int(m.group(2)), t)
+            m = re.search(r"案例(\d+)", t)
+            if m:
+                return (100, int(m.group(1)), t)
+            return (200, 0, t)
+        arr.sort(key=lesson_key)
         for a in arr:
             cards.append({
                 "section": section_id, "sub": sid, "type": "video",
@@ -408,7 +417,7 @@ lines.append("  sections: [")
 ai_subs = subs_by_section.get("ai-vision", [])
 subs_js = ",\n        ".join(f'{{ id: "{s["id"]}", name: "{s["name"]}" }}' for s in ai_subs)
 lines.append("    {")
-lines.append('      id: "ai-vision", name: "AI工业视觉检测",')
+lines.append('      id: "ai-vision", name: "AI工业视觉感知",')
 lines.append("      subs: [")
 lines.append("        " + subs_js)
 lines.append("      ],")

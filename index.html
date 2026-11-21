@@ -95,10 +95,16 @@
   /* ============ 右侧主区 ============ */
   .main { flex: 1; min-width: 0; }
 
-  /* 瀑布流 */
+  /* 瀑布流：无二级分组的栏目 */
   .masonry { columns: 3 250px; column-gap: 18px; }
-  .card { break-inside: avoid; margin-bottom: 18px; padding: 20px; transition: border-color .2s, background .2s; }
+  .masonry .card { break-inside: avoid; margin-bottom: 18px; }
+  /* 网格：二级栏目视图，保证从左到右、从上往下的序号阅读顺序 */
+  .grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; align-items: start; }
+  .grid-view .card { margin-bottom: 0; }
+  .card { padding: 20px; transition: border-color .2s, background .2s; }
+  .empty-hint { grid-column: 1 / -1; }
   .card:hover { border-color: rgba(255, 255, 255, .16); background: var(--panel-hover); }
+
 
   .card .cat {
     display: flex; align-items: center; gap: 7px;
@@ -257,8 +263,11 @@
     const cards = SITE_DATA.cards.filter(c =>
       (!currentSection || c.section === currentSection) &&
       (!currentSub || !c.sub || c.sub === currentSub));
+    // 二级栏目视图用网格（行优先顺序），其余用瀑布流
+    const sec = SITE_DATA.sections.find(s => s.id === currentSection);
+    masonry.classList.toggle('grid-view', !!(sec && sec.subs && currentSub));
     masonry.innerHTML = cards.map(renderCard).join('')
-      || `<div class="card-base empty-hint" style="width:100%">「${esc(currentName())}」栏目内容整理中，敬请期待</div>`;
+      || `<div class="card-base empty-hint">「${esc(currentName())}」栏目内容整理中，敬请期待</div>`;
     bindVideoCovers();
   }
   function currentName() {
