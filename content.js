@@ -19,6 +19,7 @@ const SITE_DATA = {
     { id: "vlog", name: "生活VLOG" },
     { id: "reading", name: "读书笔记" },
     { id: "tech-blog", name: "科技博文" },
+    { id: "about", name: "关于我" },
   ],
 
   cards: [
