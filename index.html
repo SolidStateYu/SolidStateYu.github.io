@@ -198,8 +198,8 @@
   </main>
 </div>
 
-<script src="content.js"></script>
 <script>
+function boot() {
   // ----- 栏目图标（线条 SVG） -----
   const SECTION_ICONS = {
     "ai-vision": '<svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><circle cx="12" cy="12" r="3.2"/></svg>',
@@ -330,6 +330,14 @@
   firstBtn.classList.add('active');
   currentSection = firstSection.id;
   filterCards();
+}
+// 动态加载 content.js（时间戳穿透缓存，保证每次打开都是最新内容）
+(function () {
+  const s = document.createElement('script');
+  s.src = 'content.js?v=' + Date.now();
+  s.onload = boot;
+  document.body.appendChild(s);
+})();
 </script>
 </body>
 </html>
