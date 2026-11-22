@@ -16,7 +16,7 @@ const SITE_DATA = {
       ],
     },
     { id: "ai-productivity", name: "AI&生产力" },
-    { id: "vlog", name: "生活VLOG" },
+    { id: "vlog", name: "浮生闲趣" },
     { id: "reading", name: "读书笔记" },
     { id: "tech-blog", name: "科技博文" },
   ],

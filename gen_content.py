@@ -422,7 +422,7 @@ lines.append("      subs: [")
 lines.append("        " + subs_js)
 lines.append("      ],")
 lines.append("    },")
-for sid, name in [("ai-productivity", "AI&生产力"), ("vlog", "生活VLOG"), ("reading", "读书笔记"), ("tech-blog", "科技博文")]:
+for sid, name in [("ai-productivity", "AI&生产力"), ("vlog", "浮生闲趣"), ("reading", "读书笔记"), ("tech-blog", "科技博文")]:
     lines.append(f'    {{ id: "{sid}", name: "{name}" }},')
 lines.append("  ],")
 lines.append("")
