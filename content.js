@@ -245,14 +245,14 @@ const SITE_DATA = {
       bvid: "BV1ZkLwzxEjf",
       title: "L3-01-分割标注",
       pic: "https://i1.hdslb.com/bfs/archive/68a80a4e56501b57ab9bb7830bf9b5334c25dd45.jpg",
-      duration: 1061, views: 153, date: "2025-04-20",
+      duration: 1061, views: 154, date: "2025-04-20",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
       bvid: "BV1VwL8ztEss",
       title: "L3-02-快速训练与评估",
       pic: "https://i2.hdslb.com/bfs/archive/a23804932ba5d7e25c34f193cfc58797daddbfb6.jpg",
-      duration: 1183, views: 108, date: "2025-04-23",
+      duration: 1183, views: 109, date: "2025-04-23",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
@@ -364,7 +364,7 @@ const SITE_DATA = {
       bvid: "BV1a7YizpEf6",
       title: "L3-18-分割模型训练详解",
       pic: "https://i1.hdslb.com/bfs/archive/45fe22a8d77d8cf6448502f6d8e025e4ad88a899.jpg",
-      duration: 2140, views: 237, date: "2025-08-16",
+      duration: 2140, views: 238, date: "2025-08-16",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
@@ -448,14 +448,21 @@ const SITE_DATA = {
       bvid: "BV14ast6HEwP",
       title: "L3-30-训练参数快照功能",
       pic: "https://i2.hdslb.com/bfs/archive/3fc619283e8bb2c911a4a7477d4da39472d1366f.jpg",
-      duration: 110, views: 34, date: "2026-11-19",
+      duration: 110, views: 35, date: "2026-11-19",
+    },
+    {
+      section: "ai-vision", sub: "part3", type: "video",
+      bvid: "BV1dryVzoEtx",
+      title: "L3-31-一键部署",
+      pic: "https://i1.hdslb.com/bfs/archive/23595d54a4693a6b95929f09cbd0d0cafa9a650a.jpg",
+      duration: 64, views: 1, date: "2026-11-22",
     },
     {
       section: "ai-vision", sub: "part4", type: "video",
       bvid: "BV14EpFzSECd",
       title: "L4-01-概览",
       pic: "https://i1.hdslb.com/bfs/archive/c2e635aeba5224efb702fdc69f1e192642f89275.jpg",
-      duration: 1895, views: 82, date: "2025-09-14",
+      duration: 1895, views: 83, date: "2025-09-14",
     },
     {
       section: "ai-vision", sub: "part4", type: "video",
@@ -532,7 +539,7 @@ const SITE_DATA = {
       bvid: "BV1AaoXBhEy2",
       title: "L4-12-离线测试",
       pic: "https://i2.hdslb.com/bfs/archive/96c981b5e6b729dd81a72e5dc32d97fc643de3f4.jpg",
-      duration: 1588, views: 40, date: "2026-04-25",
+      duration: 1588, views: 41, date: "2026-04-25",
     },
     {
       section: "ai-vision", sub: "part5", type: "video",
@@ -546,7 +553,7 @@ const SITE_DATA = {
       bvid: "BV1t8WY6NEdn",
       title: "L5-02-照明寻优",
       pic: "https://i1.hdslb.com/bfs/archive/2cddfbf413eb0cac1a9bdc6614d035b96ab3a9c8.jpg",
-      duration: 195, views: 38, date: "2026-11-13",
+      duration: 195, views: 40, date: "2026-11-13",
     },
     {
       section: "ai-vision", sub: "part6", type: "video",
