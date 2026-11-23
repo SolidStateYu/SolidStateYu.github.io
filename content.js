@@ -241,6 +241,13 @@ const SITE_DATA = {
       duration: 239, views: 164, date: "2026-09-20",
     },
     {
+      section: "ai-vision", sub: "part2", type: "video",
+      bvid: "BV1ehyDzFE9N",
+      title: "L2-27-流程模板",
+      pic: "https://i2.hdslb.com/bfs/archive/26b7b121f39e5e325fd29ae90830747a616db359.jpg",
+      duration: 261, views: 0, date: "2026-11-23",
+    },
+    {
       section: "ai-vision", sub: "part3", type: "video",
       bvid: "BV1ZkLwzxEjf",
       title: "L3-01-分割标注",
@@ -448,14 +455,14 @@ const SITE_DATA = {
       bvid: "BV14ast6HEwP",
       title: "L3-30-训练参数快照功能",
       pic: "https://i2.hdslb.com/bfs/archive/3fc619283e8bb2c911a4a7477d4da39472d1366f.jpg",
-      duration: 110, views: 35, date: "2026-11-19",
+      duration: 110, views: 36, date: "2026-11-19",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
       bvid: "BV1dryVzoEtx",
       title: "L3-31-一键部署",
       pic: "https://i1.hdslb.com/bfs/archive/23595d54a4693a6b95929f09cbd0d0cafa9a650a.jpg",
-      duration: 64, views: 1, date: "2026-11-22",
+      duration: 64, views: 64, date: "2026-11-22",
     },
     {
       section: "ai-vision", sub: "part4", type: "video",
@@ -553,7 +560,7 @@ const SITE_DATA = {
       bvid: "BV1t8WY6NEdn",
       title: "L5-02-照明寻优",
       pic: "https://i1.hdslb.com/bfs/archive/2cddfbf413eb0cac1a9bdc6614d035b96ab3a9c8.jpg",
-      duration: 195, views: 40, date: "2026-11-13",
+      duration: 195, views: 42, date: "2026-11-13",
     },
     {
       section: "ai-vision", sub: "part6", type: "video",
