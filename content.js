@@ -245,7 +245,7 @@ const SITE_DATA = {
       bvid: "BV1ehyDzFE9N",
       title: "L2-27-流程模板",
       pic: "https://i2.hdslb.com/bfs/archive/26b7b121f39e5e325fd29ae90830747a616db359.jpg",
-      duration: 261, views: 0, date: "2026-11-23",
+      duration: 261, views: 11, date: "2026-11-23",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
@@ -490,7 +490,7 @@ const SITE_DATA = {
       bvid: "BV1dYxAzmE5d",
       title: "L4-04-传统图像算法评估",
       pic: "https://i0.hdslb.com/bfs/archive/9b3c4ca81ce1aa4901688f5da9abe747ece97e84.jpg",
-      duration: 1390, views: 235, date: "2025-10-26",
+      duration: 1390, views: 236, date: "2025-10-26",
     },
     {
       section: "ai-vision", sub: "part4", type: "video",
@@ -588,10 +588,18 @@ const SITE_DATA = {
       bvid: "BV1JzZUY9Etf",
       title: "案例3：铜箔外观检",
       pic: "https://i0.hdslb.com/bfs/archive/8db497fd65ad8c9055706b7a5bde6c692b30f806.jpg",
-      duration: 701, views: 146, date: "2025-04-03",
+      duration: 701, views: 148, date: "2025-04-03",
     },
 
     // ===== AI&生产力 =====
+    {
+      section: "ai-productivity", type: "video",
+      bvid: "BV1n9yZztEFd",
+      title: "墨水屏工作原理与驱动解读",
+      desc: "墨水屏（E-Ink）的工作原理与驱动方式解读，完整实录。",
+      pic: "https://i0.hdslb.com/bfs/archive/7d010757295363f71d76fb7b9146d448c07453e7.jpg",
+      duration: 2364, views: 0, date: "2026-11-24",
+    },
     {
       section: "ai-productivity", type: "video",
       bvid: "BV1Ebsb6VEad",

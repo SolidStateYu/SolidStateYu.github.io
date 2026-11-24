@@ -452,6 +452,7 @@ def card_js(c):
 
 # AI&生产力 5 个（手动数据，保留）
 AI_PRODUCTIVITY = [
+    ("BV1n9yZztEFd", "墨水屏工作原理与驱动解读", "墨水屏（E-Ink）的工作原理与驱动方式解读，完整实录。", "https://i0.hdslb.com/bfs/archive/7d010757295363f71d76fb7b9146d448c07453e7.jpg", 2364, 0, "2026-11-24"),
     ("BV1Ebsb6VEad", "Harness 工程：Agent 优先世界的开发实践", "OpenAI 2026 年 2 月发布的《Harness engineering》解读：三人团队五个月写出约 100 万行代码，人工手写 0 行——当 agent 能写所有代码时，工程师干什么？", "https://i2.hdslb.com/bfs/archive/b9d9f205d04a0c7ed39704a7966160d219811a65.jpg", 799, 133, "2026-11-19"),
     ("BV1Wqsz6mEVv", "Anthropic Claude Code 初创公司指南", "基于 Anthropic 2026 年 8 月发布的《The Claude Code guide for startups》实践指南。", "https://i2.hdslb.com/bfs/archive/87253e952674ba4026cd810097885719479b1050.jpg", 438, 96, "2026-11-17"),
     ("BV193sA6fEbi", "AI 原生软件开发生命周期手册——ANTHROPIC官方手册", "《The AI-native SDLC playbook》解读：当 AI 写代码的速度不可思议，为什么交付还是那么慢？", "https://i2.hdslb.com/bfs/archive/9739e4c3aace68666bb5610771c7e77d0e859071.jpg", 506, 22, "2026-11-16"),
