@@ -245,7 +245,7 @@ const SITE_DATA = {
       bvid: "BV1ehyDzFE9N",
       title: "L2-27-流程模板",
       pic: "https://i2.hdslb.com/bfs/archive/26b7b121f39e5e325fd29ae90830747a616db359.jpg",
-      duration: 261, views: 11, date: "2026-11-23",
+      duration: 261, views: 15, date: "2026-11-23",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
@@ -413,7 +413,7 @@ const SITE_DATA = {
       bvid: "BV14PtF6mEXP",
       title: "L3-24-缺陷生成",
       pic: "https://i2.hdslb.com/bfs/archive/dffe5ab2ce36a78b5026425b61e8310bd0057ce8.jpg",
-      duration: 156, views: 33, date: "2026-08-28",
+      duration: 156, views: 35, date: "2026-08-28",
     },
     {
       section: "ai-vision", sub: "part3", type: "video",
@@ -592,6 +592,14 @@ const SITE_DATA = {
     },
 
     // ===== AI&生产力 =====
+    {
+      section: "ai-productivity", type: "video",
+      bvid: "BV1PJ17zpEnc",
+      title: "《数字极简》读书分享 2026.11",
+      desc: "数字极简：把线上时间集中在少量精选并优化过的活动上，支持你真正珍视的东西，然后，心甘情愿地错过其他一切。",
+      pic: "https://i0.hdslb.com/bfs/archive/1b777f5d1ccd5d73f4d8a8de7d8c803e79bcb2f6.jpg",
+      duration: 1813, views: 0, date: "2026-11-26",
+    },
     {
       section: "ai-productivity", type: "video",
       bvid: "BV1n9yZztEFd",
