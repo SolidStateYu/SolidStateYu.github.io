@@ -594,14 +594,6 @@ const SITE_DATA = {
     // ===== AI&生产力 =====
     {
       section: "ai-productivity", type: "video",
-      bvid: "BV1PJ17zpEnc",
-      title: "《数字极简》读书分享 2026.11",
-      desc: "数字极简：把线上时间集中在少量精选并优化过的活动上，支持你真正珍视的东西，然后，心甘情愿地错过其他一切。",
-      pic: "https://i0.hdslb.com/bfs/archive/1b777f5d1ccd5d73f4d8a8de7d8c803e79bcb2f6.jpg",
-      duration: 1813, views: 0, date: "2026-11-26",
-    },
-    {
-      section: "ai-productivity", type: "video",
       bvid: "BV1n9yZztEFd",
       title: "墨水屏工作原理与驱动解读",
       desc: "墨水屏（E-Ink）的工作原理与驱动方式解读，完整实录。",
@@ -684,6 +676,14 @@ const SITE_DATA = {
     },
 
     // ===== 读书笔记（B站图文） =====
+    {
+      section: "reading", type: "video",
+      bvid: "BV1PJ17zpEnc",
+      title: "《数字极简》读书分享 2026.11",
+      desc: "数字极简：把线上时间集中在少量精选并优化过的活动上，支持你真正珍视的东西，然后，心甘情愿地错过其他一切。",
+      pic: "https://i0.hdslb.com/bfs/archive/1b777f5d1ccd5d73f4d8a8de7d8c803e79bcb2f6.jpg",
+      duration: 1813, views: 0, date: "2026-11-26",
+    },
     {
       section: "reading", type: "article",
       title: "《稀缺：我们是如何陷入贫穷与忙碌的》26",
