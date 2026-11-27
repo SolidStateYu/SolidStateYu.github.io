@@ -238,7 +238,7 @@ const SITE_DATA = {
       bvid: "BV1KieY64EX1",
       title: "L2-26-内嵌智能体操作生产工程",
       pic: "https://i0.hdslb.com/bfs/archive/e2959a3b14cadd09abc94ca981fb4d0bac23cbc8.jpg",
-      duration: 239, views: 164, date: "2026-09-20",
+      duration: 239, views: 165, date: "2026-09-20",
     },
     {
       section: "ai-vision", sub: "part2", type: "video",
@@ -676,6 +676,14 @@ const SITE_DATA = {
     },
 
     // ===== 读书笔记（B站图文） =====
+    {
+      section: "reading", type: "video",
+      bvid: "BV1xD1sz5EnP",
+      title: "《无路之路》读书分享 26.11",
+      desc: "把不确定从待解决的问题，改判为生活的默认材质。",
+      pic: "https://i0.hdslb.com/bfs/archive/8b4c0106a7217ee892791bab860c8a011bc2b415.jpg",
+      duration: 1745, views: 0, date: "2026-11-27",
+    },
     {
       section: "reading", type: "video",
       bvid: "BV1PJ17zpEnc",

@@ -478,14 +478,23 @@ for bv, t, d, p, dur, v, date in VLOG:
     lines.append(card_js({"section": "vlog", "type": "video", "bvid": bv, "title": t, "desc": d, "pic": p, "duration": dur, "views": v, "date": date}))
 lines.append("")
 lines.append("    // ===== 读书笔记（B站图文） =====")
-DIGIJIAN_SIMPLE = {
-    "section": "reading", "type": "video",
-    "bvid": "BV1PJ17zpEnc", "title": "《数字极简》读书分享 2026.11",
-    "desc": "数字极简：把线上时间集中在少量精选并优化过的活动上，支持你真正珍视的东西，然后，心甘情愿地错过其他一切。",
-    "pic": "https://i0.hdslb.com/bfs/archive/1b777f5d1ccd5d73f4d8a8de7d8c803e79bcb2f6.jpg",
-    "duration": 1813, "views": 0, "date": "2026-11-26",
-}
-lines.append(card_js(DIGIJIAN_SIMPLE))
+# 手动维护的读书分享视频（按日期倒序，新增往列表前加）
+MANUAL_READING_VIDEOS = [
+    {
+        "bvid": "BV1xD1sz5EnP", "title": "《无路之路》读书分享 26.11",
+        "desc": "把不确定从待解决的问题，改判为生活的默认材质。",
+        "pic": "https://i0.hdslb.com/bfs/archive/8b4c0106a7217ee892791bab860c8a011bc2b415.jpg",
+        "duration": 1745, "views": 0, "date": "2026-11-27",
+    },
+    {
+        "bvid": "BV1PJ17zpEnc", "title": "《数字极简》读书分享 2026.11",
+        "desc": "数字极简：把线上时间集中在少量精选并优化过的活动上，支持你真正珍视的东西，然后，心甘情愿地错过其他一切。",
+        "pic": "https://i0.hdslb.com/bfs/archive/1b777f5d1ccd5d73f4d8a8de7d8c803e79bcb2f6.jpg",
+        "duration": 1813, "views": 0, "date": "2026-11-26",
+    },
+]
+for v in MANUAL_READING_VIDEOS:
+    lines.append(card_js({**v, "section": "reading", "type": "video"}))
 for a in OPUS_ARTICLES["books"]:
     lines.append(article_card_js({**a, "section": "reading"}))
 lines.append("")
